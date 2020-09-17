@@ -1,3 +1,4 @@
+var PORT = process.env.PORT || 3000;
 const express = require("express");
 const app = express();
 const router = express.Router();
@@ -276,6 +277,6 @@ app.get("/", (req,res)=>{
 });
 
 
-app.listen("3000", function(){
-    console.log("Server Started at Port 3000");
+app.listen( PORT, function(){
+    console.log("Server Started at Port "+ PORT);
 });
