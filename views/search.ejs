@@ -1,0 +1,14 @@
+<%- include ('partials/header.ejs'); %>
+
+<div class="container m-5 p-5">
+    <form action="/pics" method="GET">
+    <div class="form-group">
+        <label for="exampleInputSearch">Seach:</label>
+        <input type="text" class="form-control" placeholder="Example: Sun" name="searchTerm">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+
+<%- include ('partials/footer.ejs'); %>

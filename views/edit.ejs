@@ -1,0 +1,27 @@
+<%- include('partials/header.ejs') %>
+<div class="container">
+    <h1 class="my-5">Edit this game here!!</h1>
+    <form action="/update/<%= id %>" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+        <label>Game Name:</label>
+        <input type="text" class="form-control" value="<%= title %>" name="title">
+    </div>
+    <div class="form-group">
+        <label>Created By:</label>
+        <input  class="form-control" value="<%= creator %>" type="text" name="creator">
+    </div>
+    <label>Size:</label>
+     <div class="row">
+        <div class="col-lg-6">
+            <label>Height:</label>
+            <input  class="form-control" value="<%= height %>" type="text" name="height">
+        </div>
+        <div class="col-lg-6">
+            <label>Width:</label>
+            <input  class="form-control" value="<%= width %>" type="text" name="width">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<%- include('partials/footer.ejs') %>

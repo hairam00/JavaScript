@@ -1,0 +1,47 @@
+<%- include('partials/header.ejs') %>
+<div class="container">
+    <h1>Add a game here!!</h1>
+    <form action="/addGame" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+        <label>Game Name:</label>
+        <input type="text" class="form-control" placeholder="Example: Pubg" name="title">
+    </div>
+    <div class="form-group">
+        <label>Created By:</label>
+        <input type="text" class="form-control" placeholder="Example: Player_001" name="creator">
+    </div>
+    <label>Size:</label>
+     <div class="row">
+        <div class="col-lg-6">
+            <label>Height:</label>
+            <input  class="form-control" placeholder="Example: 600px" type="text" name="height">
+        </div>
+        <div class="col-lg-6">
+            <label>Width:</label>
+            <input  class="form-control" placeholder="Example: 800px" type="text" name="width">
+        </div>
+    </div>
+    <label>Game File:</label>
+    <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+  </div>
+  <div class="custom-file">
+    <input type="file" class="custom-file-input" id="gameInput" aria-describedby="inputGroupFileAddon01" name="file">
+    <label class="custom-file-label" for="gameInput" >Game.swf</label>
+  </div>
+</div>
+<label>Thumbnail File:</label>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+  </div>
+  <div class="custom-file">
+    <input type="file" class="custom-file-input" id="thumbInput" aria-describedby="inputGroupFileAddon01" name="thumb">
+    <label class="custom-file-label" for="thumbInput" name="file">Game.png</label>
+  </div>
+</div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+<%- include('partials/footer.ejs') %>

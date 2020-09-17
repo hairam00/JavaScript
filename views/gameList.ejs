@@ -1,0 +1,25 @@
+<%- include ('partials/header.ejs'); %>
+    <h1>Available Game: </h1>
+    <div class="row">
+    <% for(var i=0; i< gameList.length; i++){ %>
+    
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm" style="height:400px;">
+            <img class="card-img-top" src="games/thumbnails/<%= gameList[i].thumbnailFile %>" style="height: 190px;">
+            <div class="card-body">
+                <h3 class="card-text"><%= gameList[i].title %> </h3>
+                <h5 class="card-text">Game Created by: <%= gameList[i].creator %> </h5>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/game/<%= gameList[i].id %>/"><button type="button" class="btn btn-outline-dark">play Game</button></a>
+                  <a href="/game/edit/<%= gameList[i].id %>/"><button type="button" class="btn btn-outline-dark">Edit</button></a>
+                  <a href="/game/delete/<%= gameList[i].id %>/"><button type="button" class="btn btn-danger">Delete</button></a>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+    <% } %>
+        </div>
+<%- include ('partials/footer.ejs'); %>

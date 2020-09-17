@@ -1,0 +1,23 @@
+<%- include ('partials/header.ejs'); %>
+    <h1> Pictures By "www.unsplash.com" :</h1>
+    <div class="row">
+        <% for(var i=0; i < picData.results.length; i++){ %>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+             <img src="<%= picData.results[i].urls.small %>" style="height:180px; width:286px;">
+            <div class="card-body">
+                <h3 class="card-text"> By: <%= picData.results[i].user.name %>  </h3>
+                <h5 class="card-text"> Dimenisions: <%= picData.results[i].width %> x <%= picData.results[i].height %> </h5>
+                <h5 class="card-text"> <p> Loved By: <%= picData.results[i].likes %> </p> </h5>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="<%= picData.results[i].links.download %>"><button type="button" class="btn btn-outline-dark">Download Now!</button></a>
+                </div>
+                <small class="text-muted"><%= picData.results[i].created_at %></small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% } %>
+    </div>
+<%- include ('partials/footer.ejs'); %>
