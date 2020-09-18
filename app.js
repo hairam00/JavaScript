@@ -17,7 +17,8 @@ app.use(fileUpload());
 
 app.set("view engine", "ejs");
 //! Connection to MonogoDB;
-mongoose.connect("mongodb+srv://hGame:hgame123@cluster0.vozcd.gcp.mongodb.net/HGames?retryWrites=true&w=majority",{
+const url = process.env.MONGO_URL || "mongodb://localhost/kitten_db";
+mongoose.connect(url,{
     useNewUrlParser: true,
    useUnifiedTopology: true,
    useCreateIndex: true,
